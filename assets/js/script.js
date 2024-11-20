@@ -51,27 +51,27 @@
    * Language Switcher
    */
 
-  const languageSwitcher = document.getElementById("language-switcher");
-  // Detect current path
-  const currentPath = window.location.pathname;
+  // Handle language switching
+  $(".dropdown-menu li").on("click", function () {
+    const currentLangText = $(".dropdown-toggle").text().trim(); // Get current language text
+    const selectedLangText = $(this).text().trim(); // Get the selected language text
 
-  const currentLang = currentPath.includes("/ar/") ? "ar" : "en"; // Checks if the path contains 'ar'
-  languageSwitcher.value = currentLang; // Set current dropdown selection
+    // Update the dropdown button text and image
+    const selectedImg = $(this).find("img").attr("src"); // Get the selected language flag
+    $(".dropdown-toggle img").attr("src", selectedImg); // Update flag image
+    $(".dropdown-toggle")
+      .contents()
+      .filter(function () {
+        return this.nodeType === Node.TEXT_NODE; // Target the text node
+      })
+      .replaceWith(" " + selectedLangText); // Update the language text
 
-  // Add an event listener for switching languages
-  languageSwitcher.addEventListener("change", function (e) {
-    e.preventDefault();
-    const selectedLang = this.value; // Get the selected language
+    // Determine the current page and language
+    const currentPage = window.location.pathname.split("/").pop() || "index.html"; // Get current page
+    const selectedLang = selectedLangText === "English" ? "en" : "ar"; // Determine selected language
 
-    // Extract the current page name from the URL
-    const pathParts = currentPath.split("/");
-    console.log(pathParts);
-    const currentPage = pathParts.pop() || "index.html"; // Fallback to 'index.html' if no page
-
-    // Construct the new path based on the selected language
-    const newPath = selectedLang === "ar" ? `/ar/${currentPage}` : `/en/${currentPage}`;
-
-    // Redirect to the constructed path
+    // Redirect to the selected language folder
+    const newPath = `/${selectedLang}/${currentPage}`; // Construct the path
     window.location.href = newPath;
   });
 
@@ -84,9 +84,13 @@
     const input = document.getElementById("searchInput").value.toLowerCase();
     const faqItems = document.querySelectorAll(".accordion-item");
     const headingh4 = document.querySelectorAll(".faq-wraper h4");
+    headingh4.forEach((h4) => {
+      h4.style.display = "none";
+    });
 
     faqItems.forEach((item) => {
       const text = item.textContent.toLowerCase();
+
       if (text.includes(input)) {
         item.classList.remove("hidden");
       } else {

@@ -18,3 +18,8 @@ body {
    margin-right: 0;
    margin-left: auto;
 }
+
+.arabic_header .arabic_header_menus .arabic_swicher_button .dropdown button img {
+   margin-right: 4px;
+   margin-left: 0px;
+}

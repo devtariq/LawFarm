@@ -751,8 +751,7 @@ h3 {
 }
 
 .arabic_header .arabic_header_menus .arabic_swicher_button .dropdown .dropdown-menu li img {
-    max-width: 18px;
-    width: 100%;
+    width: 18px;
     border-radius: 4px;
     margin-left: 6px;
 }
@@ -4124,4 +4123,8 @@ Switcher CSS
 
 .hidden {
     display: none;
+}
+
+.form-control:focus {
+    box-shadow: none;
 }

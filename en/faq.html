@@ -23,7 +23,7 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-xl-2 col-lg-2 col-md-12 text-end">
-            <a class="logo" href="index.html">
+            <a class="logo" href="#">
               <img src="../assets/images/logo.png" alt="Arabic" />
               <img class="mbLogo" src="../assets/images/mobile-logo.png" alt="Arabic" />
             </a>
@@ -47,8 +47,8 @@
             <div class="arabic_header_menus">
               <div class="main_menu">
                 <ul>
-                  <li><a href="index.html">الرئيسية</a></li>
-                  <li><a href="about.html">من نحن</a></li>
+                  <li><a href="#">الرئيسية</a></li>
+                  <li><a href="#">من نحن</a></li>
                   <li class="sub-menu">
                     <a href="javascript:void(0);">
                       خدماتنا
@@ -62,11 +62,11 @@
                       </svg>
                     </a>
                     <ul>
-                      <li><a href="plans.html">خطط الاعمال</a></li>
-                      <li><a href="Contracts.html">المستندات والعقود</a></li>
-                      <li><a href="ask-lawyer.html">اسأل محام</a></li>
-                      <li><a href="accounting.html">خدمات المحاسبة</a></li>
-                      <li><a href="translation.html">خدمات الترجمة</a></li>
+                      <li><a href="#">خطط الاعمال</a></li>
+                      <li><a href="#">المستندات والعقود</a></li>
+                      <li><a href="#">اسأل محام</a></li>
+                      <li><a href="#">خدمات المحاسبة</a></li>
+                      <li><a href="#">خدمات الترجمة</a></li>
                     </ul>
                   </li>
                   <li class="sub-menu">
@@ -81,7 +81,7 @@
                         /></svg
                     ></a>
                     <ul>
-                      <li><a href="contact.html">تواصل معنا</a></li>
+                      <li><a href="#">تواصل معنا</a></li>
                       <li><a href="javascript:void(0);">سياسة الخصوصية</a></li>
                       <li><a href="javascript:void(0);">الشروط والأحكام</a></li>
                     </ul>
@@ -89,16 +89,24 @@
                 </ul>
               </div>
 
-              <div id="language-switcher" class="arabic_swicher_button d-flex align-items-center">
+              <div class="arabic_swicher_button d-flex align-items-center">
                 <a class="loginBtn button-animsm" href="login.html">تسجيل الدخول</a>
-                <div id="custom-language-switcher">
-                  <div class="selected-option"><img src="../assets/images/home/en.png" alt="English Flag" /> English</div>
-                  <ul class="options">
-                    <li data-lang="en"><img src="../assets/images/home/en.png" alt="English Flag" /> English</li>
-                    <li data-lang="ar"><img src="../assets/images/home/language.png" alt="English Flag" /> العربية</li>
+                <div class="dropdown">
+                  <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    <img width="18" src="../assets/images/home/en.png" alt="Arabic" />English
+                    <svg width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M6.86496 0L1.13504 0C0.287204 0 -0.175953 0.988856 0.366819 1.64018L3.23178 5.07813C3.63157 5.55789 4.36843 5.55789 4.76822 5.07814L7.63318 1.64018C8.17595 0.988857 7.7128 0 6.86496 0Z"
+                        fill="#909090"
+                      />
+                    </svg>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><img src="../assets/images/home/language.png" alt="Arabic" /> العربية</li>
                   </ul>
                 </div>
               </div>
+              <!-- switcher end -->
             </div>
           </div>
         </div>
