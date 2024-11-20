@@ -4060,7 +4060,7 @@ Switcher CSS
 }
 
 .options li {
-    padding: 10px;
+    padding: 10px 19px;
     cursor: pointer;
     display: flex;
     align-items: center;
