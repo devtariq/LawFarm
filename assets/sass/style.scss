@@ -1,0 +1,35 @@
+/*
+Theme Name: Arabic HTML Template
+Author: 
+Author URI: https://themeforest.net/user/
+Tags: arabic
+Description: Arabic HTML5 Template
+Version: 1.1.0
+*/
+
+/************************************** base css **************************************/
+@import 'base/variables';
+@import 'base/mixin';
+@import 'base/reset';
+@import 'base/typography';
+@import 'base/spacing';
+
+
+/******************************* theme css **********************************/
+@import 'theme/theme-class';
+@import 'theme/preloader';
+@import 'theme/animations';
+
+
+/******************************** components ******************************/
+@import 'components/header';
+@import 'components/buttons';
+@import 'components/footer';
+@import 'components/banner';
+
+/****************************** page styles ******************************/
+@import 'pages/index-1';
+@import 'pages/translate';
+@import 'pages/about';
+@import 'pages/pricing';
+@import 'pages/contact';

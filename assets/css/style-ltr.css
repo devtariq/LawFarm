@@ -1,0 +1,15 @@
+body {
+   margin: 0;
+   overflow-x: hidden;
+   font-family: var(--body-font);
+   background-color: var(--white-color);
+   font-weight: 500;
+   color: var(--text-color);
+   direction: ltr;
+   scroll-behavior: smooth;
+}
+
+.selected-option img,
+.options li img {
+   margin-right: 5px;
+}

@@ -1,0 +1,253 @@
+// Hero Area
+.hero-section {
+    position: relative;
+    overflow: hidden;
+    @include screen-768 {  
+        background-image: none !important; 
+    }
+}
+.hero-title {
+    p {
+        font-size: 25px;
+        font-weight: 700;
+        line-height: 30px;
+        @include screen-768 {
+            font-size: 20px;
+            line-height: 24px;
+        }
+    }
+}
+.hero-image {
+    text-align: left;
+    img {
+        max-width: 100%;
+        border-radius: 27px;
+    }
+    @include screen-768 {
+        margin: 0 0 20px;
+    }
+
+}
+.hero-content {
+    text-align: right;
+    @include screen-768 {
+        text-align: center;
+    }
+    h2 {
+        margin: 0 0 26px;
+        @include large-screen {
+            font-size: 26px;
+        }
+        @include screen-768 {
+            font-size: 27.78px;
+            line-height: 43px;
+            margin: 0 0 16px;
+        }
+        span {
+            position: relative;
+            &::after {
+                content: '';
+                position: absolute;
+                left: -11px;
+                bottom: 0;
+                width: 116%;
+                height: 108%;
+                background: url(/assets/images/home/heading-shape.png) no-repeat scroll center center/cover;
+                z-index: 1;
+                background-size: 100% 100%;
+            }
+        }
+    }
+    p {
+        font-size: 20px;
+        line-height: 31px;
+        margin: 0 0 27px;
+        direction: rtl;
+        text-align: justify;
+        @include screen-768 {
+            font-size: 15.87px;
+            line-height: 24.6px;
+            text-align: center;
+        }
+    }
+    &.hc02 {
+        p {
+            font-size: 21px;
+            line-height: 33.1px;
+            margin: 0 0 25px;
+            span {
+                color: var(--primary-color);
+                font-weight: 700;
+            }
+            @include screen-768 {
+                font-size: 16.64px;
+                line-height: 26.23px;
+                text-align: center;
+            }
+        }
+    }
+    ul { 
+        margin: 28px 0 32px;
+        @include screen-768 {
+            text-align: right;
+        }
+        li {
+            font-size: 20px;
+            line-height: 24px;
+            color: #242323;
+            margin: 0 0 18px;
+            svg {
+                margin-left: 10px;
+            }
+        }
+    }
+}
+
+.hero-sliderWraper {
+    position: relative;
+    padding-right: 86px;
+    @include screen-1400 {
+        padding-bottom: 100px;
+    }
+    @include screen-992 {
+        padding-bottom: 40px;
+        padding-right: 0;
+    }
+    .swiper-content {
+        padding: 45px 0 80px 0;
+        @include screen-992 {
+            text-align: center;
+            padding: 0 0 80px 0;
+        }
+        @include screen-768 {
+            padding: 0 0 40px 0;
+        }
+        h2 {
+            font-size: 68px;
+            line-height: 102px;
+            color: var(--heading-color);
+            @include screen-768 {
+                font-size: 45.57px;
+                line-height: 68.35px;
+            }
+        }
+        h4 {
+            font-size: 40px;
+            font-family: var(--body-font);
+            margin: 0 0 32px;
+            @include screen-768 {
+                font-size: 26.81px;
+                line-height: 32.17px;
+                margin-bottom: 16px;
+            }
+        }
+        p {
+            font-size: 23px;
+            line-height: 38px;
+            color: #565656;
+            text-align: justify;
+            margin: 0 0 32px;
+            @include screen-992 {
+                text-align: center;
+            }
+            @include screen-768 {
+                font-size: 15.41px;
+                line-height: 25.47px;
+            }
+        }
+        .arabic-btn  {
+            display: inline-flex;
+            align-items: center;
+            gap: 36px;
+            padding: 21.2px 47px;
+        }
+    }
+    .swiper-pagination {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        gap: 24px;
+        width: 20px;
+        top: 0;
+        bottom: 0;
+        left: auto;
+        right: 16px;
+        z-index: 1;
+        @include screen-992 {
+            transform: rotate(-180deg);
+            flex-direction: row;
+            width: 100%;
+            height: 20px;
+            top: auto;
+            bottom: 8px;
+            gap: 14px;
+            padding: 0;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            right: 8px;
+            top: 0;
+            width: 1px;
+            height: 100%;
+            background: #000000;
+            z-index: -1;
+            @include screen-992 {
+                width: 100%;
+                height: 1px;
+            }
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            width:100%;
+            height: 200px;
+            background: var(--white-color);
+            @include screen-992 {
+                height: 24px;
+                width: 200px;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: 3px;
+            }
+        }
+        .swiper-pagination-bullet {
+            width: 9px;
+            height: 9px;
+            background: #000000;
+            border-radius: 50%;
+            opacity: 1;
+            transform: scale(1);
+            transition: all 350ms ease;
+            z-index: 9;
+            &.swiper-pagination-bullet-active {
+                background: var(--primary-color);
+                transform: scale(1.3);
+                outline: 1px solid #000000;
+                outline-offset: 2px;
+            }
+        }
+
+    }
+}
+
+.hero-image01 {
+    position: relative;
+    top: -140px;
+    img {
+        max-width: 100%;
+    }
+    @include screen-1400 {
+        top: -70px;
+    }
+    @include screen-992 {
+        top: 0;
+        padding-bottom: 100px;
+    }
+    @include screen-768 {
+        text-align: center;
+        padding-bottom: 60px;
+    }
+}

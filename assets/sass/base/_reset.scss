@@ -1,0 +1,212 @@
+body {
+    margin: 0;
+    overflow-x: hidden;
+    font-family: var(--body-font);
+    background-color: var(--white-color);
+    font-weight: 500;
+    color: var(--text-color);
+    direction: rtl;
+    scroll-behavior: smooth;
+}
+
+input {
+    outline: 0;
+}
+
+select {
+    outline: 0;
+    border: 0;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+button {
+    border: 0;
+    background-color: transparent;
+}
+.font-21 {
+    font-size: 21.35px !important;
+    line-height: 33.1px;
+    @include screen-768 {
+        font-size: 16.64px !important;
+        line-height: 26.23px;
+    }
+}
+.font-23 {
+    font-size: 23px !important;
+    line-height: 33.1px !important;
+    margin-bottom: 45px !important;
+}
+.font-32 {
+    font-size: 32px;
+    line-height: 42px;
+}
+.heading-color {
+    color: var(--heading-color) !important;
+}
+.gr-color {
+    color: #68708C;
+}
+
+.heading-title {
+    font-size: 35px;
+    font-weight: 700;
+    line-height: 52.5px;
+    margin: 0 0 2px;
+    @include screen-768 {
+        font-size: 30px;
+        line-height: 45px;
+        margin: 0 0 12px;
+    }
+}
+.subtitle {
+    font-size: 20px;
+    line-height: 24px;
+    @include screen-768 {
+        font-size: 18px;
+        line-height: 21.6px;
+
+    }
+}
+
+.position-relative {
+    position: relative;
+}
+.position-absolute {
+    position: absolute;
+}
+
+// Button Animation
+.button-animsm {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    &::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -173%;
+        width: 190%;
+        height: 170%;
+        background-color: var(
+        --heading-color);
+        z-index: -1;
+        border-radius: 50%;
+        -webkit-transition: all 350ms ease;
+        -o-transition: all 350ms ease;
+        transition: all 350ms ease;
+        z-index: -1;
+    }
+    &:hover::before {
+        top: -10px;
+    }
+}
+.button-animlg {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    &::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -200%;
+        width: 170%;
+        height: 200%;
+        background-color: var(--heading-color);
+        z-index: -1;
+        border-radius: 40%;
+        transition: all 350ms ease;
+        z-index: -1;
+    }
+    &:hover::before {
+        top: -10px;
+    }
+}
+
+@include screen-992 {
+    .order-md1 {
+        order: -1;
+        margin-bottom: 10px;
+    }
+    .order-md2 {
+        order: 1;
+    }
+
+}
+@include screen-768 {
+    .order-sm1 {
+        order: -1;
+        margin-bottom: 10px;
+    }
+    .order-sm2 {
+        order: 1;
+    }
+
+}
+
+@media(min-width: 768px) {
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm {
+        max-width: 760px;
+    }
+}
+
+@media(min-width: 992px) {
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm {
+        max-width: 980px;
+    }
+}
+
+@media(min-width: 1200px) {
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl,
+    .container-xxl {
+        max-width: 1190px;
+    }
+}
+
+@media(min-width: 1300px) {
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl,
+    .container-xxl {
+        max-width: 1214px;
+    }
+}
+
+@media(min-width: 1300px) {
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl,
+    .container-xxl {
+        max-width: 1214px;
+    }
+}
