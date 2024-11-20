@@ -75,21 +75,34 @@
     window.location.href = newPath;
   });
 
-  /* document.addEventListener("DOMContentLoaded", function () {
-    // Get the current page's filename
-    const currentPage = window.location.pathname.split("/").pop() || "index.html";
-    console.log(currentPage);
-    // Generate links for language switching
-    const enLink = "/en/" + currentPage;
-    const arLink = "/ar/" + currentPage;
+  /*================================== 
+  Search FAQ
+  */
+  // script.js
 
-    document.getElementById("switch-en").href = enLink;
-    document.getElementById("switch-ar").href = arLink;
+  function searchFAQ() {
+    const input = document.getElementById("searchInput").value.toLowerCase();
+    const faqItems = document.querySelectorAll(".accordion-item");
+    const headingh4 = document.querySelectorAll(".faq-wraper h4");
 
-    // Optional: Check if the file exists
-    fetch(enLink).catch(() => (document.getElementById("switch-en").href = "/en/index.html"));
-    fetch(arLink).catch(() => (document.getElementById("switch-ar").href = "/ar/index.html"));
-  }); */
+    faqItems.forEach((item) => {
+      const text = item.textContent.toLowerCase();
+      if (text.includes(input)) {
+        item.classList.remove("hidden");
+      } else {
+        item.classList.add("hidden");
+      }
+    });
+  }
+
+  function clearSearch() {
+    document.getElementById("searchInput").value = "";
+    searchFAQ();
+  }
+
+  // Event Listeners
+  document.getElementById("searchInput").addEventListener("keyup", searchFAQ);
+  document.getElementById("clearButton").addEventListener("click", clearSearch);
 
   // 1. Sticky Header
   document.addEventListener("DOMContentLoaded", function () {

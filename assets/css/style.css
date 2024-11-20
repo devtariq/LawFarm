@@ -4113,3 +4113,15 @@ Switcher CSS
     margin-left: 0;
     margin-right: auto;
 }
+
+.btn-primary {
+    background-color: var(--primary-color);
+}
+
+.highlight {
+    background-color: yellow;
+}
+
+.hidden {
+    display: none;
+}
