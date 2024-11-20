@@ -50,11 +50,9 @@
   /**==============================================
    * Language Switcher
    */
-
   // Handle language switching
   $(".dropdown-menu li").on("click", function () {
-    const currentLangText = $(".dropdown-toggle").text().trim(); // Get current language text
-    const selectedLangText = $(this).text().trim(); // Get the selected language text
+    const selectedLangText = $(this).text().trim(); // Get selected language text
 
     // Update the dropdown button text and image
     const selectedImg = $(this).find("img").attr("src"); // Get the selected language flag
@@ -62,16 +60,40 @@
     $(".dropdown-toggle")
       .contents()
       .filter(function () {
-        return this.nodeType === Node.TEXT_NODE; // Target the text node
+        return this.nodeType === Node.TEXT_NODE; // Target text node
       })
       .replaceWith(" " + selectedLangText); // Update the language text
 
-    // Determine the current page and language
-    const currentPage = window.location.pathname.split("/").pop() || "index.html"; // Get current page
-    const selectedLang = selectedLangText === "English" ? "en" : "ar"; // Determine selected language
+    // Extract the current path
+    const currentPath = window.location.pathname;
 
-    // Redirect to the selected language folder
-    const newPath = `/${selectedLang}/${currentPage}`; // Construct the path
+    // Identify language folders
+    const langFolders = ["/en/", "/ar/"];
+    let basePath = currentPath;
+
+    // Remove existing language folder if present
+    langFolders.forEach((lang) => {
+      if (currentPath.includes(lang)) {
+        basePath = currentPath.replace(lang, "/"); // Remove the language folder
+      }
+    });
+
+    // Ensure the `src` folder is included if applicable
+    const srcIndex = basePath.indexOf("/src/");
+    if (srcIndex !== -1) {
+      basePath = basePath.substring(0, srcIndex + 5); // Keep up to `/src/`
+    } else {
+      basePath = basePath.substring(0, basePath.lastIndexOf("/")); // Default to root directory
+    }
+
+    // Determine the selected language folder
+    const selectedLangFolder = selectedLangText === "English" ? "en" : "ar";
+
+    // Construct the new path
+    const currentFile = currentPath.split("/").pop() || "index.html"; // Get the current file
+    const newPath = `${basePath}/${selectedLangFolder}/${currentFile}`;
+
+    // Redirect to the constructed path
     window.location.href = newPath;
   });
 
