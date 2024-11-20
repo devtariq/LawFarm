@@ -13,3 +13,8 @@ body {
 .options li img {
    margin-right: 5px;
 }
+
+.accordion-button::after {
+   margin-right: 0;
+   margin-left: auto;
+}

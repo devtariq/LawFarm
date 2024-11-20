@@ -4108,3 +4108,8 @@ Switcher CSS
     height: 24px;
     background-size: 24px;
 }
+
+.accordion-button::after {
+    margin-left: 0;
+    margin-right: auto;
+}
